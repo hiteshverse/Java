@@ -20,14 +20,16 @@ public class StaticVar {
         System.out.println(firstStu.sid);
         System.out.println(firstStu.name);
         System.out.println(firstStu.age);
-        System.out.println(firstStu.totalStu);
+        System.out.println(Student.totalStu);
 
         // The values of totalStu will be same for the individual objects cause static variables are not dependent
-        // on the object but we can still access them by any object's reference variable
+        // on the object but we can still access them by any object's reference variable but it's not a good pratice
+        // for accesing any static varible we should always use the class name before the static variable just like this className.static_var_name
+        // One more thing we can access the static varibles without creating any object of that class
 
         System.out.println(secondStu.sid);
         System.out.println(secondStu.name);
         System.out.println(secondStu.age);
-        System.out.println(secondStu.totalStu);
+        System.out.println(Student.totalStu);
     }
 }
