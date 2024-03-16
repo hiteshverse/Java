@@ -1,35 +1,29 @@
-class Student {
-    int sid;
+// Static Variables
+class Persons {
+    int room_no;
     String name;
-    int age;
-    static int totalStu;
+    
+    // It's a static method that doesn't dependent on the object but still shared among all the objects
+    // It's value will be remains for every object of the class
+    static int rent = 8000;
 
-    Student(int id, String student, int stuAge) {
-        this.sid = id;
-        this.name = student;
-        this.age = stuAge;
-        Student.totalStu += 1;
+    Persons(int room, String person) {
+        room_no = room;
+        name = person;
+    }
+
+    void printInfo() {
+        System.out.println(this.room_no + " " + this.name + " " + Persons.rent);
     }
 }
 
 public class StaticVar {
     public static void main(String[] args) {
-        Student firstStu = new Student(1, "Tom", 19);
-        Student secondStu = new Student(2, "Jerry", 20);
+        Persons first = new Persons(1, "Dawg");
+        Persons second = new Persons(2, "Epic");
 
-        System.out.println(firstStu.sid);
-        System.out.println(firstStu.name);
-        System.out.println(firstStu.age);
-        System.out.println(Student.totalStu);
-
-        // The values of totalStu will be same for the individual objects cause static variables are not dependent
-        // on the object but we can still access them by any object's reference variable but it's not a good pratice
-        // for accesing any static varible we should always use the class name before the static variable just like this className.static_var_name
-        // One more thing we can access the static varibles without creating any object of that class
-
-        System.out.println(secondStu.sid);
-        System.out.println(secondStu.name);
-        System.out.println(secondStu.age);
-        System.out.println(Student.totalStu);
+        //Non - Static stuff can't be accessed inside a static method without creating any instance of the class
+        first.printInfo();
+        second.printInfo();
     }
 }
