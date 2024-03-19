@@ -1,21 +1,21 @@
-class Shape{
+class Shape {
     int length;
     int width;
 
     // Default Constructor with No Arguments
-    Shape(){
+    Shape() {
         this.length = 1;
         this.width = 1;
     }
 
     // Parameterized Constructor with two Arguments
-    Shape(int l, int w){
+    Shape(int l, int w) {
         this.length = l;
         this.width = w;
     }
 
     // Copy Constructor with one Arguments
-    Shape(Shape other){
+    Shape(Shape other) {
         this.length = other.length;
         this.width = other.width;
     }
@@ -25,7 +25,15 @@ class Shape{
 class Rectangle extends Shape {
     int weight;
 
+    Rectangle() {
+        super();
+        this.weight = 1;
+    }
 
+    Rectangle(int l, int b, int w) {
+        super(l, b);
+        this.weight = w;
+    }
 
 }
 
@@ -42,5 +50,9 @@ public class Inheritance {
 
         Rectangle rect = new Rectangle();
         System.out.println(rect.length + " " + rect.width + " " + rect.weight);
+
+        Rectangle rect1 = new Rectangle(5, 10, 15);
+        System.out.println(rect1.length + " " + rect1.width + " " + rect1.weight);
+
     }
 }
