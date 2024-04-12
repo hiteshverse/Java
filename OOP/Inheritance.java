@@ -1,58 +1,25 @@
-class Shape {
-    int length;
-    int width;
+import java.util.Scanner;
 
-    // Default Constructor with No Arguments
-    Shape() {
-        this.length = 1;
-        this.width = 1;
-    }
-
-    // Parameterized Constructor with two Arguments
-    Shape(int l, int w) {
-        this.length = l;
-        this.width = w;
-    }
-
-    // Copy Constructor with one Arguments
-    Shape(Shape other) {
-        this.length = other.length;
-        this.width = other.width;
-    }
-}
-
-// Inheriting the base class into child class
-class Rectangle extends Shape {
-    int weight;
-
-    Rectangle() {
-        super();
-        this.weight = 1;
-    }
-
-    Rectangle(int l, int b, int w) {
-        super(l, b);
-        this.weight = w;
-    }
-
-}
-
+/**
+ * Inheritance
+ */
 public class Inheritance {
+
     public static void main(String[] args) {
-        // Shape obj = newT Shape();  // Calling the Deafult Constructor
-        // System.out.println(obj.length + " " + obj.width);
+        Scanner sc = new Scanner(System.in);
 
-        // Shape obj1 = new Shape(5, 29);
-        // System.out.println(obj1.length + " " + obj1.width);  // Calling the Parameterized Constructor
+        int test_case = sc.nextInt();
+        int[] arr = new int[test_case];
 
-        // Shape obj2 = new Shape(obj1);
-        // System.out.println(obj2.length + " " + obj2.width);
+        for(int i = 0; i < test_case; i++){
+            arr[i] = sc.nextInt();
+            arr[i] *= -1;
+        }
 
-        Rectangle rect = new Rectangle();
-        System.out.println(rect.length + " " + rect.width + " " + rect.weight);
+        for(int i = 0; i < test_case; i++){
+            System.out.println(arr[i]);
+        }
 
-        Rectangle rect1 = new Rectangle(5, 10, 15);
-        System.out.println(rect1.length + " " + rect1.width + " " + rect1.weight);
-
+        sc.close();
     }
 }
